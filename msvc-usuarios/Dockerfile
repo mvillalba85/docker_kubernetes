@@ -22,6 +22,9 @@ FROM openjdk:17-jdk-alpine
 
 WORKDIR /app
 
+# Se crea carpeta en el proyecto donde se guardan los logs
+RUN mkdir ./logs
+
 COPY --from=builder /app/msvc-usuarios/target/msvc-usuarios-0.0.1-SNAPSHOT.jar .
 
 EXPOSE 8001
